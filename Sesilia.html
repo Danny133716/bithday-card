@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Поздравляю с днем рождения!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Фоновые мерцания */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+            animation: twinkling 5s infinite ease-in-out;
+            z-index: 0;
+        }
+
+        @keyframes twinkling {
+            0% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.5;
+            }
+        }
+
+        .card {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 600px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            color: #fff;
+            font-family: 'Great Vibes', cursive;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            line-height: 1.6;
+            animation: fadeIn 2s ease-in-out 1s both;
+        }
+
+        .btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff6a9e;
+            color: #fff;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            animation: fadeIn 2.5s ease-in-out both;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff3e70;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff9a9e, 0 0 20px #ff9a9e, 0 0 30px #ff9a9e, 0 0 40px #ff9a9e;
+            }
+            to {
+                text-shadow: 0 0 20px #ff6a9a, 0 0 30px #ff6a9a, 0 0 40px #ff6a9a, 0 0 50px #ff6a9a;
+            }
+        }
+
+        /* Шарики */
+        .balloons {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 400px;
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .balloon {
+            width: 60px;
+            height: 80px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            animation: floatUp 6s ease-in-out infinite;
+        }
+
+        .balloon:nth-child(1) {
+            background: #ff6a9e;
+            left: -50px;
+            animation-delay: 0s;
+        }
+
+        .balloon:nth-child(2) {
+            background: #ffcc5c;
+            left: 0;
+            animation-delay: 2s;
+        }
+
+        .balloon:nth-child(3) {
+            background: #88e0ef;
+            right: -50px;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(-300%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>С Днём Рождения!</h1>
+        <p>Пусть этот день наполнится улыбками, радостью и тёплыми моментами! Ты заслуживаешь самого лучшего!</p>
+        <a href="https://example.com" class="btn">Посмотреть подарок 🎁</a>
+    </div>
+
+    <div class="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+
+</body>
+</html>
